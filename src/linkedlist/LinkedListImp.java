@@ -20,6 +20,14 @@ public class LinkedListImp {
 		}
 	}
 	
+	public void insertAtStart(int data) {
+		Node current = new Node();
+		current.data = data;
+		current.next = head;
+		
+		head = current;
+	}
+	
 	public void show() {
 		Node node = head;
 		

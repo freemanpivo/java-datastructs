@@ -27,4 +27,18 @@ class LinkedListImpTest {
 		assertEquals(3, ll.length());
 	}
 	
+	@Test
+	void testInsertAtStart3times() {
+		ll.insertAtStart(1);
+		ll.insertAtStart(2);
+		ll.insertAtStart(3);
+		
+		ll.show();
+		
+		assertEquals(3, ll.length());
+	}
+	
+	
+	
+	
 }
