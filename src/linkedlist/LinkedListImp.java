@@ -55,6 +55,37 @@ public class LinkedListImp {
 			
 	}
 	
+	public String deleteAtPosition(int position) {
+		
+		if (position == 0) {
+			head = head.next;
+			return "atStart";
+			
+		} else if (position == (length() - 1)){
+			Node iterator = head;
+			
+			for (int i=0;i<position-1;i++) {
+				iterator = iterator.next;
+			}
+			
+			iterator.next = null;
+			return "atEnd";
+			
+		} else {
+			Node iterator = head;
+			Node aux = null;
+			
+			for (int i=0;i<position-1;i++) {
+				iterator = iterator.next;
+			}
+			aux = iterator.next;
+			iterator.next = aux.next;
+			aux = null;
+			
+			return "atMiddle";
+		}
+	}
+	
 	public void show() {
 		Node node = head;
 		
