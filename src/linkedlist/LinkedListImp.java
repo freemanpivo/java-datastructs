@@ -28,6 +28,33 @@ public class LinkedListImp {
 		head = current;
 	}
 	
+	public String insertAtPosition(int position, int data) {
+		Node current = new Node();
+		current.data = data;
+		current.next = null;
+		
+		Node iterator = new Node();
+		iterator = head;
+		
+		if (position == 0) {
+			insertAtStart(data);
+			return "atStart";
+		}
+		else if (position == (length() - 1)) {
+			insert(data);
+			return "atEnd";
+		}
+		else {
+			for (int i=0; i<position-1;i++) {
+				iterator = iterator.next;
+			}
+			current.next = iterator.next;
+			iterator.next = current;
+			return "atMiddle";
+		}
+			
+	}
+	
 	public void show() {
 		Node node = head;
 		

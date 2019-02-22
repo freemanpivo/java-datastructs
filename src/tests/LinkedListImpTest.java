@@ -9,7 +9,7 @@ import linkedlist.LinkedListImp;
 
 class LinkedListImpTest {
 
-	LinkedListImp ll = new LinkedListImp();
+	private LinkedListImp ll = new LinkedListImp();
 		
 	@Test
 	void testEmptyLinkedList() {
@@ -33,12 +33,43 @@ class LinkedListImpTest {
 		ll.insertAtStart(2);
 		ll.insertAtStart(3);
 		
-		ll.show();
-		
 		assertEquals(3, ll.length());
 	}
 	
+	@Test
+	void testInsertAtPositionStart() {
+		String expected = "atStart";
+		int position = 0;
+		int data = 1000;
+		
+		assertEquals(expected, ll.insertAtPosition(position, data));
+	}
 	
+	@Test
+	void testInsertAtPositionEnd() {
+		String expected = "atEnd";
+		
+		ll.insert(1);
+		ll.insert(2);
+		ll.insert(3);
+		
+		int position = 2;
+		int data = 4;
+		
+		assertEquals(expected, ll.insertAtPosition(position, data));
+	}
 	
-	
+	@Test
+	void testInsertAtPositionMiddle() {
+		String expected = "atMiddle";
+		
+		ll.insert(1);
+		ll.insert(2);
+		ll.insert(3);
+		
+		int position = 1;
+		int data = 4;
+		
+		assertEquals(expected, ll.insertAtPosition(position, data));
+	}
 }
