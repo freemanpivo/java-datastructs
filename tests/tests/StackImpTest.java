@@ -17,6 +17,13 @@ class StackImpTest {
 	}
 	
 	@Test
+	void testIfStackIsNotEmpty() {
+		stack.push(1);
+		
+		assertFalse(stack.isEmpty());
+	}
+	
+	@Test
 	void testIfStackHasNoElements() {
 		assertEquals(0, stack.size());
 	}
