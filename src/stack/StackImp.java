@@ -31,8 +31,11 @@ public class StackImp {
 		}
 	}
 	
-	public void peek() {
-		
+	public int peek() {
+		 if (lastElementPosition == 0)
+			 return 0;
+		 else 
+			 return stack[lastElementPosition-1];
 	}
 	
 	public int size() {

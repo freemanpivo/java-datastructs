@@ -78,4 +78,30 @@ class StackImpTest {
 		
 		assertEquals(4, stack.size());
 	}
+	
+	@Test
+	void testPeekFirstElement() {
+		
+		assertEquals(0, stack.peek());
+	}
+	
+	@Test
+	void testPeekMiddleElement() {
+		stack.push(1);
+		stack.push(2);
+		stack.push(3);
+		
+		assertEquals(3, stack.peek());
+	}
+	
+	@Test
+	void testPeekElementWithFullStack() {
+		stack.push(1);
+		stack.push(2);
+		stack.push(3);
+		stack.push(4);
+		stack.push(5);
+		
+		assertEquals(5, stack.peek());
+	}
 }
