@@ -6,8 +6,13 @@ public class StackImp {
 	private int lastElementPosition = 0;
 	private int stack[] = new int[STACK_SIZE];
 	
-	public void push(int data) {
-		
+	public void push(int data) throws ArrayIndexOutOfBoundsException{
+		try {
+			stack[lastElementPosition] = data;
+		} catch (ArrayIndexOutOfBoundsException stackOverFlow) {
+			throw stackOverFlow;
+		}
+		lastElementPosition++;
 	}
 	
 	public void pop() {
@@ -24,5 +29,11 @@ public class StackImp {
 	
 	public boolean isEmpty() {
 		return true;
+	}
+
+	public void show() {
+		for (int i=0; i<lastElementPosition; i++) {
+			System.out.print(stack[i] + " ");
+		}
 	}
 }
