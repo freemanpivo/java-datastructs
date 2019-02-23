@@ -7,16 +7,28 @@ public class StackImp {
 	private int stack[] = new int[STACK_SIZE];
 	
 	public void push(int data) throws ArrayIndexOutOfBoundsException{
+		
 		try {
 			stack[lastElementPosition] = data;
+			lastElementPosition++;
 		} catch (ArrayIndexOutOfBoundsException stackOverFlow) {
 			throw stackOverFlow;
 		}
-		lastElementPosition++;
+	
 	}
 	
-	public void pop() {
+	public void pop() throws EmptyStackImpException{
 		
+		try {
+			if (lastElementPosition == 0) {
+				throw new EmptyStackImpException();
+			} else {
+				lastElementPosition--;
+				stack[lastElementPosition] = 0;
+			}
+		} catch (EmptyStackImpException e) {
+			throw e;
+		}
 	}
 	
 	public void peek() {
@@ -36,7 +48,7 @@ public class StackImp {
 	}
 
 	public void show() {
-		for (int i=0; i<lastElementPosition; i++) {
+		for (int i=0; i<STACK_SIZE; i++) {
 			System.out.print(stack[i] + " ");
 		}
 	}
