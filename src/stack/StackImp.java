@@ -24,11 +24,15 @@ public class StackImp {
 	}
 	
 	public int size() {
-		return 0;
+		return lastElementPosition;
 	}
 	
 	public boolean isEmpty() {
-		return true;
+		if (lastElementPosition == 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public void show() {
