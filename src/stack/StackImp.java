@@ -43,11 +43,7 @@ public class StackImp {
 	}
 	
 	public boolean isEmpty() {
-		if (lastElementPosition == 0) {
-			return true;
-		} else {
-			return false;
-		}
+		return (lastElementPosition == 0);
 	}
 
 	public void show() {
